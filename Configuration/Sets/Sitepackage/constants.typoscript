@@ -1,0 +1,6 @@
+sitepackage {
+    settings {
+        siteName = Convert
+        siteClaim = A very clear statement of your offer.
+    }
+}

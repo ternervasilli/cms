@@ -1,0 +1,4 @@
+name: cms/sitepackage
+label: 'Sitepackage: Convert Landingpage'
+dependencies:
+  - typo3/fluid-styled-content

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2026-09-23" product-name="sitepackage">
+		<header/>
+		<body>
+			<trans-unit id="tt_content.button_label" resname="tt_content.button_label">
+				<source>Button label</source>
+			</trans-unit>
+			<trans-unit id="tt_content.feature_items" resname="tt_content.feature_items">
+				<source>Feature items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.faq_items" resname="tt_content.faq_items">
+				<source>FAQ items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.testimonial_items" resname="tt_content.testimonial_items">
+				<source>Testimonials</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tab.content" resname="tt_content.tab.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tab.appearance" resname="tt_content.tab.appearance">
+				<source>Appearance</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.CType.sitepackage_hero" resname="tt_content.CType.sitepackage_hero">
+				<source>Hero header (image, headline, signup box)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.sitepackage_feature_highlight" resname="tt_content.CType.sitepackage_feature_highlight">
+				<source>Feature highlight (image + icon list)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.sitepackage_faq" resname="tt_content.CType.sitepackage_faq">
+				<source>FAQ accordion</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.sitepackage_testimonials" resname="tt_content.CType.sitepackage_testimonials">
+				<source>Testimonial slider</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.sitepackage_cta_banner" resname="tt_content.CType.sitepackage_cta_banner">
+				<source>Call-to-action banner</source>
+			</trans-unit>
+
+			<trans-unit id="frameClass.galleryStrip" resname="frameClass.galleryStrip">
+				<source>Sitepackage: Edge-to-edge gallery strip</source>
+			</trans-unit>
+			<trans-unit id="frameClass.logoBar" resname="frameClass.logoBar">
+				<source>Sitepackage: Grayscale press/logo bar</source>
+			</trans-unit>
+
+			<trans-unit id="hero.header" resname="hero.header">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="hero.bodytext" resname="hero.bodytext">
+				<source>Supporting statement</source>
+			</trans-unit>
+			<trans-unit id="hero.image" resname="hero.image">
+				<source>Background image</source>
+			</trans-unit>
+
+			<trans-unit id="featureHighlight.header" resname="featureHighlight.header">
+				<source>Section title</source>
+			</trans-unit>
+			<trans-unit id="featureHighlight.bodytext" resname="featureHighlight.bodytext">
+				<source>Intro text</source>
+			</trans-unit>
+			<trans-unit id="featureHighlight.image" resname="featureHighlight.image">
+				<source>Image</source>
+			</trans-unit>
+
+			<trans-unit id="faq.header" resname="faq.header">
+				<source>Section title</source>
+			</trans-unit>
+			<trans-unit id="faq.bodytext" resname="faq.bodytext">
+				<source>Intro text</source>
+			</trans-unit>
+
+			<trans-unit id="testimonials.header" resname="testimonials.header">
+				<source>Section title (optional)</source>
+			</trans-unit>
+
+			<trans-unit id="ctaBanner.header" resname="ctaBanner.header">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="ctaBanner.bodytext" resname="ctaBanner.bodytext">
+				<source>Text (optional)</source>
+			</trans-unit>
+
+			<trans-unit id="tx_sitepackage_domain_model_featureitem" resname="tx_sitepackage_domain_model_featureitem">
+				<source>Feature item</source>
+			</trans-unit>
+			<trans-unit id="featureitem.header" resname="featureitem.header">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="featureitem.bodytext" resname="featureitem.bodytext">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="featureitem.image" resname="featureitem.image">
+				<source>Icon</source>
+			</trans-unit>
+
+			<trans-unit id="tx_sitepackage_domain_model_faqitem" resname="tx_sitepackage_domain_model_faqitem">
+				<source>FAQ item</source>
+			</trans-unit>
+			<trans-unit id="faqitem.header" resname="faqitem.header">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="faqitem.bodytext" resname="faqitem.bodytext">
+				<source>Answer</source>
+			</trans-unit>
+
+			<trans-unit id="tx_sitepackage_domain_model_testimonialitem" resname="tx_sitepackage_domain_model_testimonialitem">
+				<source>Testimonial item</source>
+			</trans-unit>
+			<trans-unit id="testimonialitem.header" resname="testimonialitem.header">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="testimonialitem.subheader" resname="testimonialitem.subheader">
+				<source>Role / company</source>
+			</trans-unit>
+			<trans-unit id="testimonialitem.bodytext" resname="testimonialitem.bodytext">
+				<source>Quote</source>
+			</trans-unit>
+			<trans-unit id="testimonialitem.image" resname="testimonialitem.image">
+				<source>Avatar</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="testimonials" id="c{data.uid}">
+	<f:if condition="{data.header}">
+		<h2 class="testimonials__heading">{data.header}</h2>
+	</f:if>
+
+	<f:if condition="{items}">
+		<div class="testimonial-slider" data-testimonial-slider="data-testimonial-slider">
+			<div class="testimonial-slider__track">
+				<f:for each="{items}" as="item" iteration="i">
+					<blockquote class="testimonial-slider__slide{f:if(condition: i.isFirst, then: ' is-active')}" data-testimonial-slide="data-testimonial-slide">
+						<f:if condition="{item.image.0}">
+							<f:image image="{item.image.0}" width="72" height="72" class="testimonial-slider__avatar" alt="{item.header}" />
+						</f:if>
+						<p class="testimonial-slider__quote">&#8222;<f:format.nl2br>{item.bodytext}</f:format.nl2br>&#8220;</p>
+						<footer class="testimonial-slider__meta">
+							<f:if condition="{item.header}">
+								<cite>{item.header}</cite>
+							</f:if>
+							<f:if condition="{item.subheader}">
+								<span>, {item.subheader}</span>
+							</f:if>
+						</footer>
+					</blockquote>
+				</f:for>
+			</div>
+
+			<f:if condition="{items -> f:count()} > 1">
+				<div class="testimonial-slider__dots" role="tablist">
+					<f:for each="{items}" as="item" iteration="i">
+						<button
+							type="button"
+							class="testimonial-slider__dot{f:if(condition: i.isFirst, then: ' is-active')}"
+							data-testimonial-dot="data-testimonial-dot"
+							data-index="{i.index}"
+							aria-label="Testimonial {i.cycle}"
+						></button>
+					</f:for>
+				</div>
+			</f:if>
+		</div>
+	</f:if>
+</section>
+</html>

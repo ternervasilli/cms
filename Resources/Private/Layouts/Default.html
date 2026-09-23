@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<head>
+	<meta charset="utf-8" />
+	<f:comment>
+		The actual title/meta tags are managed by EXT:seo
+		(page title provider) - nothing to render here.
+	</f:comment>
+	<f:render section="HeaderAssets" optional="true" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Nunito+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet" />
+</head>
+<body>
+	<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+	<f:render partial="Header" arguments="{siteName: siteName, mainNavigation: mainNavigation}" />
+
+	<main id="main-content">
+		<f:render section="Main" />
+	</main>
+
+	<f:render partial="Footer" arguments="{siteName: siteName}" />
+</body>
+</html>

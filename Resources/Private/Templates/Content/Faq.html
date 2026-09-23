@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="faq" id="c{data.uid}">
+	<div class="container">
+		<f:if condition="{data.header} || {data.bodytext}">
+			<div class="section-heading">
+				<f:if condition="{data.header}">
+					<h2>{data.header}</h2>
+				</f:if>
+				<f:if condition="{data.bodytext}">
+					<p><f:format.nl2br>{data.bodytext}</f:format.nl2br></p>
+				</f:if>
+			</div>
+		</f:if>
+
+		<div class="faq__grid">
+			<f:for each="{items}" as="item">
+				<div class="faq__item">
+					<f:if condition="{item.header}">
+						<h3>{item.header}</h3>
+					</f:if>
+					<f:if condition="{item.bodytext}">
+						<div class="faq__answer">
+							<f:format.html>{item.bodytext}</f:format.html>
+						</div>
+					</f:if>
+				</div>
+			</f:for>
+		</div>
+	</div>
+</section>
+</html>

@@ -1,0 +1,135 @@
+page = PAGE
+page {
+    typeNum = 0
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = Page/Default
+
+        templateRootPaths {
+            0 = EXT:sitepackage/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            0 = EXT:sitepackage/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            0 = EXT:sitepackage/Resources/Private/Layouts/
+        }
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 1
+                expandAll = 1
+                includeSpacer = 1
+                titleField = nav_title // title
+                as = mainNavigation
+            }
+        }
+
+        variables {
+            siteName = TEXT
+            siteName.value = {$sitepackage.settings.siteName}
+        }
+    }
+
+    includeCSS {
+        main = EXT:sitepackage/Resources/Public/Css/main.css
+    }
+
+    includeJSFooter {
+        main = EXT:sitepackage/Resources/Public/JavaScript/main.js
+        main.disableCompression = 1
+    }
+
+    meta {
+        viewport = width=device-width, initial-scale=1
+    }
+}
+
+# ----------------------------------------------------------------
+# Make our own Templates/Partials/Layouts folders known to
+# lib.contentElement (used by every tt_content.<CType> below and
+# by core content elements like "textmedia"/"image" too, so their
+# default markup can be overridden by placing a same-named
+# template in our own Templates/Content/ folder if desired).
+# ----------------------------------------------------------------
+lib.contentElement {
+    templateRootPaths {
+        20 = EXT:sitepackage/Resources/Private/Templates/
+    }
+    partialRootPaths {
+        20 = EXT:sitepackage/Resources/Private/Partials/
+    }
+    layoutRootPaths {
+        20 = EXT:sitepackage/Resources/Private/Layouts/
+    }
+}
+
+# ----------------------------------------------------------------
+# Custom Sitepackage content elements
+# ----------------------------------------------------------------
+tt_content {
+    sitepackage_hero =< lib.contentElement
+    sitepackage_hero {
+        templateName = Content/Hero
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+                as = images
+            }
+        }
+    }
+
+    sitepackage_feature_highlight =< lib.contentElement
+    sitepackage_feature_highlight {
+        templateName = Content/FeatureHighlight
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+                as = images
+            }
+            20 = CmsSitepackage\Sitepackage\DataProcessing\ChildRecordsProcessor
+            20 {
+                table = tx_sitepackage_domain_model_featureitem
+                parentField = parentid
+                fileFields = image
+                as = items
+            }
+        }
+    }
+
+    sitepackage_faq =< lib.contentElement
+    sitepackage_faq {
+        templateName = Content/Faq
+        dataProcessing {
+            10 = CmsSitepackage\Sitepackage\DataProcessing\ChildRecordsProcessor
+            10 {
+                table = tx_sitepackage_domain_model_faqitem
+                parentField = parentid
+                as = items
+            }
+        }
+    }
+
+    sitepackage_testimonials =< lib.contentElement
+    sitepackage_testimonials {
+        templateName = Content/Testimonials
+        dataProcessing {
+            10 = CmsSitepackage\Sitepackage\DataProcessing\ChildRecordsProcessor
+            10 {
+                table = tx_sitepackage_domain_model_testimonialitem
+                parentField = parentid
+                fileFields = image
+                as = items
+            }
+        }
+    }
+
+    sitepackage_cta_banner =< lib.contentElement
+    sitepackage_cta_banner {
+        templateName = Content/CtaBanner
+    }
+}

@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="feature-highlight" id="c{data.uid}">
+	<div class="container">
+		<f:if condition="{data.header} || {data.bodytext}">
+			<div class="section-heading">
+				<f:if condition="{data.header}">
+					<h2>{data.header}</h2>
+				</f:if>
+				<f:if condition="{data.bodytext}">
+					<p><f:format.nl2br>{data.bodytext}</f:format.nl2br></p>
+				</f:if>
+			</div>
+		</f:if>
+
+		<div class="feature-highlight__grid">
+			<f:if condition="{images.0}">
+				<div class="feature-highlight__media">
+					<f:image image="{images.0}" width="600" alt="{images.0.alternative}" loading="lazy" />
+				</div>
+			</f:if>
+
+			<ul class="feature-highlight__list">
+				<f:for each="{items}" as="item">
+					<li class="feature-highlight__item">
+						<f:if condition="{item.image.0}">
+							<span class="feature-highlight__icon">
+								<f:image image="{item.image.0}" width="40" alt="" />
+							</span>
+						</f:if>
+						<div class="feature-highlight__text">
+							<f:if condition="{item.header}">
+								<h3>{item.header}</h3>
+							</f:if>
+							<f:if condition="{item.bodytext}">
+								<p><f:format.nl2br>{item.bodytext}</f:format.nl2br></p>
+							</f:if>
+						</div>
+					</li>
+				</f:for>
+			</ul>
+		</div>
+	</div>
+</section>
+</html>

@@ -1,0 +1,124 @@
+mod.web_layout.BackendLayouts {
+    sitepackage_landingpage {
+        title = Landingpage (Convert)
+        icon = EXT:sitepackage/Resources/Public/Icons/Content/Hero.svg
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 9
+                rows {
+                    1 {
+                        columns.1 {
+                            name = Hero
+                            colPos = 0
+                        }
+                    }
+                    2 {
+                        columns.1 {
+                            name = Intro (Text + Benefits)
+                            colPos = 10
+                        }
+                    }
+                    3 {
+                        columns.1 {
+                            name = Features
+                            colPos = 20
+                        }
+                    }
+                    4 {
+                        columns.1 {
+                            name = Gallery strip
+                            colPos = 30
+                        }
+                    }
+                    5 {
+                        columns.1 {
+                            name = FAQ
+                            colPos = 40
+                        }
+                    }
+                    6 {
+                        columns {
+                            1 {
+                                name = Testimonial text
+                                colPos = 50
+                            }
+                            2 {
+                                name = Testimonial slider
+                                colPos = 60
+                            }
+                        }
+                    }
+                    7 {
+                        columns.1 {
+                            name = Press / logo bar
+                            colPos = 70
+                        }
+                    }
+                    8 {
+                        columns.1 {
+                            name = CTA banner
+                            colPos = 80
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Restrict which content types editors may place in each landing
+# page zone, so the page keeps following the intended design.
+mod.web_layout.tt_content.colPos_list = 0,10,20,30,40,50,60,70,80
+
+TCEFORM.tt_content.colPos.addItems {
+    0 = Hero
+    10 = Intro (Text + Benefits)
+    20 = Features
+    30 = Gallery strip
+    40 = FAQ
+    50 = Testimonial text
+    60 = Testimonial slider
+    70 = Press / logo bar
+    80 = CTA banner
+}
+
+# ----------------------------------------------------------------
+# New Content Element wizard
+# ----------------------------------------------------------------
+mod.wizards.newContentElement.wizardItems.sitepackage {
+    header = Sitepackage
+    show = *
+    elements {
+        sitepackage_hero {
+            iconIdentifier = content-sitepackage-hero
+            title = Hero header
+            description = Full-width hero image, headline and signup box
+            tt_content_defValues.CType = sitepackage_hero
+        }
+        sitepackage_feature_highlight {
+            iconIdentifier = content-sitepackage-feature-highlight
+            title = Feature highlight
+            description = Big image with an icon + title + text list
+            tt_content_defValues.CType = sitepackage_feature_highlight
+        }
+        sitepackage_faq {
+            iconIdentifier = content-sitepackage-faq
+            title = FAQ accordion
+            description = Two-column list of frequently asked questions
+            tt_content_defValues.CType = sitepackage_faq
+        }
+        sitepackage_testimonials {
+            iconIdentifier = content-sitepackage-testimonials
+            title = Testimonial slider
+            description = Rotating customer quotes with avatar
+            tt_content_defValues.CType = sitepackage_testimonials
+        }
+        sitepackage_cta_banner {
+            iconIdentifier = content-sitepackage-cta-banner
+            title = CTA banner
+            description = Centered closing statement with a button
+            tt_content_defValues.CType = sitepackage_cta_banner
+        }
+    }
+}

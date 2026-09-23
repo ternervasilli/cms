@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+	<f:comment>
+		Each zone below maps 1:1 to a row of the "Landingpage (Convert)"
+		backend layout (see Configuration/Sets/Sitepackage/page.tsconfig).
+		lib.dynamicContent is shipped by EXT:fluid_styled_content.
+	</f:comment>
+
+	<!-- Hero -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 0}" />
+
+	<!-- Intro text + benefit images (core textmedia) -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 10}" />
+
+	<!-- Features -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 20}" />
+
+	<!-- Edge-to-edge gallery strip (core image) -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 30}" />
+
+	<!-- FAQ -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 40}" />
+
+	<!-- Testimonial text + slider, side by side -->
+	<div class="row-split">
+		<div class="row-split__col">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 50}" />
+		</div>
+		<div class="row-split__col">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 60}" />
+		</div>
+	</div>
+
+	<!-- Press / logo bar (core image) -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 70}" />
+
+	<!-- CTA banner -->
+	<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 80}" />
+
+</f:section>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<header class="site-header" data-site-header="data-site-header">
+	<div class="site-header__inner">
+		<a class="site-header__logo" href="/">
+			<f:if condition="{siteName}">
+				<f:then>{siteName}</f:then>
+				<f:else>Convert</f:else>
+			</f:if>
+		</a>
+
+		<f:if condition="{mainNavigation}">
+			<nav class="site-header__nav" aria-label="Hauptnavigation">
+				<ul>
+					<f:for each="{mainNavigation}" as="page">
+						<li class="{f:if(condition: page.active, then: 'is-active')}">
+							<a href="{page.link}" target="{page.target}">{page.title}</a>
+						</li>
+					</f:for>
+				</ul>
+			</nav>
+		</f:if>
+
+		<button type="button" class="site-header__toggle" data-nav-toggle="data-nav-toggle" aria-expanded="false" aria-controls="site-header-nav">
+			<span></span><span></span><span></span>
+			<span class="visually-hidden">Menü</span>
+		</button>
+	</div>
+</header>
+</html>

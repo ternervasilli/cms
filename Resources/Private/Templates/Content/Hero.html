@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="hero" id="c{data.uid}">
+	<f:if condition="{images.0}">
+		<div class="hero__media">
+			<f:image image="{images.0}" width="1920" class="hero__image" alt="{images.0.alternative}" loading="eager" />
+		</div>
+	</f:if>
+	<div class="hero__scrim"></div>
+
+	<div class="hero__content">
+		<f:if condition="{data.header}">
+			<h1 class="hero__headline">{data.header}</h1>
+		</f:if>
+		<f:if condition="{data.bodytext}">
+			<p class="hero__subline"><f:format.nl2br>{data.bodytext}</f:format.nl2br></p>
+		</f:if>
+
+		<div class="hero__form-card">
+			<h2 class="hero__form-title">Apply Now for Free</h2>
+
+			<f:comment>
+				Static demo markup only. Wire this up to a real
+				EXT:form form definition (with a mail/DB finisher)
+				for actual signup handling.
+			</f:comment>
+			<form class="hero__form" action="#" method="post" data-static-demo-form="data-static-demo-form">
+				<div class="hero__form-field">
+					<label for="hero-email-{data.uid}">Your e-mail</label>
+					<input type="email" id="hero-email-{data.uid}" name="email" placeholder="you@example.com" />
+				</div>
+				<div class="hero__form-field">
+					<label for="hero-name-{data.uid}">Full Name</label>
+					<input type="text" id="hero-name-{data.uid}" name="name" placeholder="Full Name" />
+				</div>
+				<div class="hero__form-field">
+					<label for="hero-phone-{data.uid}">Phone number</label>
+					<input type="tel" id="hero-phone-{data.uid}" name="phone" placeholder="123 456 789" />
+				</div>
+
+				<f:if condition="{data.header_link}">
+					<f:then>
+						<f:link.typolink parameter="{data.header_link}" class="btn btn--primary btn--block">
+							<f:if condition="{data.tx_sitepackage_button_label}">
+								<f:then>{data.tx_sitepackage_button_label}</f:then>
+								<f:else>Apply for Free Trial</f:else>
+							</f:if>
+						</f:link.typolink>
+					</f:then>
+					<f:else>
+						<button type="submit" class="btn btn--primary btn--block">
+							<f:if condition="{data.tx_sitepackage_button_label}">
+								<f:then>{data.tx_sitepackage_button_label}</f:then>
+								<f:else>Apply for Free Trial</f:else>
+							</f:if>
+						</button>
+					</f:else>
+				</f:if>
+			</form>
+		</div>
+	</div>
+
+	<a class="hero__scroll-hint" href="#main-content" aria-label="Nach unten scrollen">
+		<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+			<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</a>
+</section>
+</html>

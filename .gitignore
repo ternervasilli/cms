@@ -1,0 +1,4 @@
+/vendor/
+/.Build/
+/.php-cs-fixer.cache
+.DS_Store

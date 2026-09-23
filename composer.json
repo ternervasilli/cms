@@ -1,0 +1,31 @@
+{
+	"name": "cms/sitepackage",
+	"type": "typo3-cms-extension",
+	"description": "Sitepackage extension implementing the 'Convert' landing page design as TYPO3 v14 Fluid content elements.",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": "^8.3",
+		"typo3/cms-core": "^14.3",
+		"typo3/cms-backend": "^14.3",
+		"typo3/cms-frontend": "^14.3",
+		"typo3/cms-fluid-styled-content": "^14.3",
+		"typo3/cms-extbase": "^14.3",
+		"typo3/cms-fluid": "^14.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"CmsSitepackage\\Sitepackage\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "sitepackage"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	}
+}
